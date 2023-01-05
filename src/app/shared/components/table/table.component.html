@@ -1,0 +1,18 @@
+<table class="table-auto w-full text-center border-separate border-spacing-y-2">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="py-1 w-1/4">Nombre de Tienda</th>
+        <th class="py-1 w-1/4">Email</th>
+        <th class="py-1 w-1/4">Última Modificación</th>
+        <th class="py-1 w-1/4">Rol</th>
+      </tr>
+    </thead>
+    <tbody class="drop-shadow">
+      <tr *ngFor="let user of users" class="bg-white">
+        <td class="py-4 rounded-l w-1/4">{{user.name}}</td>
+        <td class="py-4 w-1/4">{{user.email}}</td>
+        <td class="py-4 w-1/4">{{user.lastModify | date: 'dd MMM. yyyy · h:mm a' | lowercase}}</td>
+        <td class="py-4 rounded-r w-1/4">{{user.rol}}</td>
+      </tr>
+    </tbody>
+</table>

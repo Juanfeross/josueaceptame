@@ -1,0 +1,26 @@
+<form class="flex flex-row gap-2" *ngIf="formGroup" [formGroup]="formGroup">
+    <label class="flex flex-col px-2 py-1 w-80 border-2 rounded-md" for="">
+        <span>Nombre de Tienda/Email</span>
+        <input class="outline-none"
+        formControlName="nameOrEmail"
+        (keyup)="sendFilter()"
+        type="text"
+        placeholder="Inserta un Nombre o Email"
+        >
+    </label>
+    <label class="flex flex-col px-2 py-1 w-80 border-2 rounded-md" for="">
+        <span>Filtrar por roles</span>
+        <select class="outline-none"
+        formControlName="rol"
+        (change)="sendFilter()"
+        name="Roles"
+        id="roles"
+        >
+            <option value="Tripulante">Tripulante</option>
+            <option value="Programador">Programador</option>
+            <option value="QA">QA</option>
+            <option value="Administrador">Administrador</option>
+            <option value="">Ninguno</option>
+        </select>
+    </label>
+</form>

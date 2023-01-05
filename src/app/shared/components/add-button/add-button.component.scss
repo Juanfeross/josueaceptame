@@ -1,0 +1,41 @@
+.primary {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem;
+  gap: 8px;
+  background-color: #6a22ca;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 20px;
+  color: white;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.primary:hover {
+  background-color: #4d0aa4;
+}
+
+.default {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem;
+  gap: 8px;
+  background-color: #E5E7EB;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 20px;
+  color: black;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.default:hover {
+  background-color: #a8a9ad;
+}
