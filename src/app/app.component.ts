@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ITableObjects } from './core/models/table-objects/tableObjects';
 import { IFilters } from './core/models/filters/filters';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-root',
@@ -44,6 +45,10 @@ export class AppComponent implements OnInit {
     }
   ]
 
+  constructor (public ngxSmartModalService: NgxSmartModalService) {
+
+  }
+
   ngOnInit(): void {
     this.tempUsers = [...this.users];
   }
@@ -77,5 +82,17 @@ export class AppComponent implements OnInit {
     });
 
     this.tempUsers = result;
+  }
+
+  public getCloseModal(event: boolean) {
+    this.ngxSmartModalService.close('userModal');
+  }
+
+  public getNewStore(event: ITableObjects) {
+    const user: ITableObjects = {...event, lastModify: new Date()}
+
+    this.users.push(user);
+    this.tempUsers.push(user);
+    this.getCloseModal(true);
   }
 }
